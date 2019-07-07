@@ -3,12 +3,20 @@ import {
   initializeCityDatabase,
   isCity
 } from "./setup-teardown";
+
+beforeAll(() => {
+  const fnName = "beforeAll";
+  return initializeCityDatabase(fnName);
+});
+
 beforeEach(() => {
-  return initializeCityDatabase();
+  const fnName = "beforeEach";
+  return initializeCityDatabase(fnName);
 });
 
 afterEach(() => {
-  clearCityDatabase();
+  const fnName = "afterEach";
+  clearCityDatabase(fnName);
 });
 
 test("city database has Vienna", () => {
@@ -17,4 +25,9 @@ test("city database has Vienna", () => {
 
 test("city database has San Juan", () => {
   expect(isCity("San Juan")).toBeTruthy();
+});
+
+afterAll(() => {
+  const fnName = "afterAll";
+  return clearCityDatabase(fnName);
 });
