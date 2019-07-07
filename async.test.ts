@@ -44,3 +44,14 @@ test("the fetch fails with an error async/await", async () => {
     expect(e).toMatch("error");
   }
 });
+
+test("the data is peanut butter async/await with resolves", async () => {
+  const data = "peanut butter";
+  await expect(fetchData(data)).resolves.toBe("peanut butter");
+});
+
+test("the fetch fails with an error async/await with reject", async () => {
+  const data = "peanut butter";
+  const error = true;
+  await expect(fetchData(data, error)).rejects.toMatch("error");
+});
