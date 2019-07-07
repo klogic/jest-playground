@@ -16,3 +16,14 @@ test("the data is peanut butter", () => {
     expect(data).toBe("peanut butter");
   });
 });
+
+test("the data is peanut butter resolves", () => {
+  const data = "peanut butter";
+  return expect(fetchData(data)).resolves.toBe("peanut butter");
+});
+
+test("the fetch fails with an error", () => {
+  const data = "peanut butter";
+  const error = true;
+  return expect(fetchData(data, error)).rejects.toMatch("error");
+});
