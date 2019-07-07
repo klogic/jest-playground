@@ -27,3 +27,20 @@ test("the fetch fails with an error", () => {
   const error = true;
   return expect(fetchData(data, error)).rejects.toMatch("error");
 });
+
+test("the data is peanut butter async/await", async () => {
+  const data = "peanut butter";
+  const result = await fetchData(data);
+  expect(result).toBe("peanut butter");
+});
+
+test("the fetch fails with an error async/await", async () => {
+  const data = "peanut butter";
+  const error = true;
+  expect.assertions(1);
+  try {
+    await fetchData(data, error);
+  } catch (e) {
+    expect(e).toMatch("error");
+  }
+});
