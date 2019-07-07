@@ -8,5 +8,8 @@
     "jest": "^23.6.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "mem": "^4.0.0"
   }
 }
