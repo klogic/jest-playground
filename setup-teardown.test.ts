@@ -4,7 +4,7 @@ import {
   isCity
 } from "./setup-teardown";
 beforeEach(() => {
-  initializeCityDatabase();
+  return initializeCityDatabase();
 });
 
 afterEach(() => {

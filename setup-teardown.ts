@@ -1,6 +1,6 @@
 const initializeCityDatabase = () => {
   console.log("initializeCityDatabase init");
-  return "initializeCityDatabase init";
+  return Promise.resolve("initializeCityDatabase init");
 };
 const clearCityDatabase = () => {
   console.log("clearCityDatabase");
